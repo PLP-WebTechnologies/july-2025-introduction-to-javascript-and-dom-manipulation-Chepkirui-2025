@@ -80,3 +80,31 @@ listBtn.addEventListener("click", () => {
     fruitList.appendChild(li);
   });
 });
+
+
+
+// Part 4: DOM Manipulation
+
+// Example 1: Toggle dark mode
+const toggleThemeBtn = document.getElementById("toggleThemeBtn");
+toggleThemeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// Example 2: Dynamically change text
+const toggleText = document.getElementById("toggleText");
+toggleThemeBtn.addEventListener("click", () => {
+  if (document.body.classList.contains("dark-mode")) {
+    toggleText.textContent = "Dark Mode is ON";
+  } else {
+    toggleText.textContent = "Light Mode is ON";
+  }
+});
+
+// example 3: create element dynamically on user action
+greetBtn.addEventListener("click", () => {
+  const newNote = document.createElement("p");
+  newNote.textContent = "This paragraph was created dynamically!";
+  newNote.style.fontStyle = "italic";
+  document.querySelector("section").appendChild(newNote);
+});
