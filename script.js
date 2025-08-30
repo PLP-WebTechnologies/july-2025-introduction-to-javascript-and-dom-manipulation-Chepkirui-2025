@@ -50,3 +50,33 @@ calcBtn.addEventListener("click", () => {
   }
 });
 
+
+// part 3: JavaScript loops
+
+// countdown using a for loop
+const countdownBtn = document.getElementById("countdownBtn");
+const countdownList = document.getElementById("countdownList");
+
+countdownBtn.addEventListener("click", () => {
+  countdownList.innerHTML = ""; // clear previous
+  for (let i = 5; i >= 1; i--) {
+    let li = document.createElement("li");
+    li.textContent = i;
+    countdownList.appendChild(li);
+  }
+});
+
+// iterating through an array using forEach
+const listBtn = document.getElementById("listBtn");
+const fruitList = document.getElementById("fruitList");
+
+listBtn.addEventListener("click", () => {
+  fruitList.innerHTML = ""; // clear previous
+  const fruits = ["Mango", "Banana", "Strawberry", "Orange"];
+
+  fruits.forEach(fruit => {
+    let li = document.createElement("li");
+    li.textContent = fruit;
+    fruitList.appendChild(li);
+  });
+});
