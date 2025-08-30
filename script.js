@@ -21,3 +21,32 @@ greetBtn.addEventListener("click", () => {
   }
 });
 
+
+// part 2: Functions - reusability
+
+// function to calculate total of two numbers
+function calculateTotal(a, b) {
+  return a + b;
+}
+
+// function to format a string nicely
+function formatMessage(msg) {
+  return `Tip: ${msg}`;
+}
+
+// hooking up button to function
+const calcBtn = document.getElementById("calcBtn");
+const totalResult = document.getElementById("totalResult");
+
+calcBtn.addEventListener("click", () => {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    let total = calculateTotal(num1, num2);
+    totalResult.textContent = `Total = ${total}`;
+  } else {
+    totalResult.textContent = formatMessage("Please enter two numbers.");
+  }
+});
+
